@@ -65,9 +65,19 @@ The score is used to rank opportunities and determine whether a HireHub-native j
 
 ## Screenshots
 
+### Account Creation
+<p align="center">
+  <img src="docs/screenshots/08-create-account.png" width="420" alt="HireHub candidate and recruiter account creation">
+</p>
+
 ### Login
 <p align="center">
   <img src="docs/screenshots/01-login.png" width="780" alt="HireHub login screen">
+</p>
+
+### Auto Apply Setup
+<p align="center">
+  <img src="docs/screenshots/04-auto-apply-setup.png" width="420" alt="HireHub three-step Auto Apply setup">
 </p>
 
 ### Candidate Job Discovery & Match Scores
@@ -78,11 +88,6 @@ The score is used to rank opportunities and determine whether a HireHub-native j
 ### Unified Application Tracker
 <p align="center">
   <img src="docs/screenshots/03-unified-application-tracker.png" width="780" alt="HireHub unified internal and external application tracker">
-</p>
-
-### Auto Apply Setup
-<p align="center">
-  <img src="docs/screenshots/04-auto-apply-setup.png" width="420" alt="HireHub three-step Auto Apply setup">
 </p>
 
 ### External Job Discovery
@@ -98,11 +103,6 @@ The score is used to rank opportunities and determine whether a HireHub-native j
 ### Recruiter Application Management
 <p align="center">
   <img src="docs/screenshots/07-recruiter-applications.png" width="780" alt="HireHub recruiter application management">
-</p>
-
-### Account Creation
-<p align="center">
-  <img src="docs/screenshots/08-create-account.png" width="780" alt="HireHub candidate and recruiter account creation">
 </p>
 
 ## External Job Sources
