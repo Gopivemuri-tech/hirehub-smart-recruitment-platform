@@ -1,0 +1,2488 @@
+:root {
+  --bg:#fffaf5;
+  --surface:#ffffff;
+  --text:#172033;
+  --muted:#697386;
+  --line:#e3e8f0;
+  --primary:#f97316;
+  --primary-dark:#ea580c;
+  --secondary:#fff1e6;
+  --danger:#c92a2a;
+  --success:#137a3a;
+  --warning:#9a6700;
+  --nav:#0f172a;
+  --shadow:0 16px 40px rgba(25,35,55,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+.navbar{position:sticky;top:0;z-index:20;background:var(--nav);color:#fff;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:1220px;margin:auto;padding:15px 22px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;gap:10px;align-items:center;color:#fff;text-decoration:none;font-size:20px;font-weight:900;white-space:nowrap}
+.brand small{display:block;color:#9eabc1;font-size:10px;font-weight:500;letter-spacing:.04em}
+.brand-mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#fb923c,#ea580c)}
+.nav-links{display:flex;gap:4px;align-items:center;flex:1}
+.nav-link{color:#cbd4e3;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:14px}
+.nav-link:hover,.nav-link.active{background:#1d2940;color:#fff}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.user-pill{font-size:12px;color:#b8c3d5;padding-right:4px}
+.page{max-width:1220px;margin:auto;padding:38px 22px 70px;min-height:calc(100vh - 140px)}
+.footer{text-align:center;padding:20px;color:#8790a1;font-size:12px}
+.hero{border-radius:24px;background:linear-gradient(135deg,#f0f4ff,#ffffff 55%);border:1px solid var(--line);box-shadow:var(--shadow)}
+.home-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;padding:48px;margin-bottom:28px}
+.hero-copy h1,.section-head h1,.auth-card h1,.form-card h1,.job-detail h1{font-size:clamp(32px,5vw,54px);letter-spacing:-.045em;margin:8px 0 14px;line-height:1.04}
+.hero-copy p,.section-head p{font-size:17px;color:var(--muted);line-height:1.65;max-width:720px}
+.hero-panel{display:grid;gap:12px;align-content:center}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px}
+.metric{background:#fbfcff;border:1px solid var(--line);padding:16px;border-radius:13px}
+.metric span{display:block;color:var(--muted);font-size:12px;font-weight:700;margin-bottom:7px}
+.metric strong{font-size:20px}
+.metric.big strong{font-size:16px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature h2{margin:10px 0}.feature p{color:var(--muted);line-height:1.6}.feature-icon{font-size:28px}
+.eyebrow{font-size:11px;letter-spacing:.14em;font-weight:900;color:var(--primary)}
+.button{border:0;border-radius:10px;padding:11px 16px;font-weight:800;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:8px;cursor:pointer}
+.button.primary{background:var(--primary);color:#fff}.button.primary:hover{background:var(--primary-dark)}
+.button.secondary{background:var(--secondary);color:#c2410c}
+.button.ghost{background:#f0f3f8;color:#344054}.navbar .button.ghost{background:#292018;color:#e6ebf4}
+.button.danger{background:#feecec;color:var(--danger)}
+.button.small{padding:8px 11px;font-size:12px}.button.full{width:100%}.button:disabled{opacity:.5;cursor:not-allowed}
+.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px}
+.section-head h1{font-size:38px;margin-bottom:8px}.section-head p{margin:0;font-size:15px}
+.auth-shell,.form-shell{max-width:720px;margin:20px auto}
+.auth-card,.form-card{padding:30px}.auth-card{max-width:500px;margin:auto}
+.auth-card h1,.form-card h1{font-size:34px}
+label{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}
+label>span{font-size:12px;font-weight:800;color:#4c5668}
+label small{color:var(--muted)}
+input,select,textarea{width:100%;border:1px solid #d8dee9;border-radius:10px;background:#fff;color:var(--text);padding:11px 12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#fb923c;box-shadow:0 0 0 3px rgba(249,115,22,.14)}
+textarea{resize:vertical}
+.auth-foot{text-align:center;color:var(--muted);font-size:13px}.auth-foot a,.text-link{color:#f97316;font-weight:800;text-decoration:none}
+.muted{color:var(--muted)}.preline{white-space:pre-line;line-height:1.75;color:#465064}
+.alert{padding:11px 13px;border-radius:10px;margin:12px 0;font-size:13px}
+.alert.error{background:#fff0f0;border:1px solid #fecaca;color:#9b1c1c}
+.alert.success{background:#effaf3;border:1px solid #b8e3c7;color:#166534}
+.search-bar{display:grid;grid-template-columns:1.4fr 1fr .8fr auto;gap:10px;margin-bottom:18px}
+.results-line{color:var(--muted);font-size:13px;margin:14px 2px}
+.jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.job-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 10px 28px rgba(25,35,55,.06)}
+.job-card h3{margin:5px 0;font-size:20px}.company{font-weight:800;color:#465064;margin:2px 0}
+.job-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.job-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:15px 0}
+.job-meta.large{font-size:14px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 16px}
+.chip{font-size:11px;font-weight:700;background:#f0f3f9;color:#536071;padding:6px 8px;border-radius:999px}
+.status{display:inline-block;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;background:#edf1f6;color:#526071}
+.status-active,.status-hired,.status-shortlisted{background:#e9f8ee;color:#176b35}
+.status-closed,.status-disabled,.status-rejected{background:#ffeded;color:#a22}
+.status-applied,.status-reviewing{background:#fff3e8;color:#c2410c}
+.pagination{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px;color:var(--muted);font-size:13px}
+.detail-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:18px}.job-detail h2{margin-top:26px}.sticky-card{position:sticky;top:92px;align-self:start}
+.metrics-row,.admin-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.admin-metrics{grid-template-columns:repeat(6,1fr)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.table-card{padding:0;overflow:hidden}.table-title{padding:20px 22px 10px;display:flex;justify-content:space-between;align-items:flex-start}.table-title h2{margin:0}.count-pill{background:#fff3e8;color:#c2410c;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{text-align:left;border-top:1px solid var(--line);padding:13px 15px;vertical-align:middle}
+th{font-size:10px;color:#687386;text-transform:uppercase;letter-spacing:.08em;background:#fafbfc}
+td{font-size:13px}.empty{text-align:center;color:var(--muted);padding:28px}.centered{text-align:center;margin:30px auto;max-width:650px}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tab{border:0;border-radius:9px;background:#e8edf5;color:#576176;padding:9px 14px;font-weight:800;cursor:pointer}.tab.active{background:#c2410c;color:#fff}
+@media(max-width:980px){
+  .nav-inner{flex-wrap:wrap}.nav-links{order:3;width:100%;overflow-x:auto}
+  .home-hero,.detail-grid{grid-template-columns:1fr}.feature-grid,.jobs-grid{grid-template-columns:repeat(2,1fr)}
+  .admin-metrics{grid-template-columns:repeat(3,1fr)}.sticky-card{position:static}.search-bar{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+  .page{padding:25px 13px 55px}.home-hero{padding:27px 20px}.feature-grid,.jobs-grid,.metrics-row,.admin-metrics,.grid-2{grid-template-columns:1fr}
+  .search-bar{grid-template-columns:1fr}.section-head{align-items:stretch;flex-direction:column}.user-pill{display:none}
+  .nav-actions{margin-left:auto}.hero-copy h1{font-size:39px}
+}
+
+.link-button{border:0;background:transparent;color:#f97316;font-weight:800;padding:0;cursor:pointer;text-decoration:none}
+
+.form-shell.wide{max-width:900px}
+.profile-section{border:1px solid var(--line);background:#fbfcff;border-radius:14px;padding:18px;margin:18px 0}
+.profile-section h2{margin:5px 0 12px;font-size:20px}
+.section-mini-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.inline-upload{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.checkbox-group{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.check-pill{display:flex;flex-direction:row;align-items:center;gap:7px;margin:0;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:#fff}
+.check-pill input{width:auto}
+.check-pill span{font-size:12px}
+.auto-toggle{display:flex;flex-direction:row;align-items:flex-start;gap:10px;padding:14px;border:1px solid #fdba74;background:#fff7ed;border-radius:12px}
+.auto-toggle input{width:auto;margin-top:3px}
+.auto-toggle span{display:flex;flex-direction:column;gap:3px}
+.auto-toggle small{font-weight:500;color:var(--muted)}
+.metrics-row.four{grid-template-columns:repeat(4,1fr)}
+.good-text{color:var(--success)}.bad-text{color:var(--danger)}
+.match-board{margin-bottom:18px}
+.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.match-card{position:relative;border:1px solid var(--line);border-radius:13px;padding:17px;background:#fff}
+.match-card h3{margin:5px 0;font-size:18px;padding-right:50px}
+.match-score{position:absolute;right:14px;top:14px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#eaf0ff;color:#c2410c;font-weight:900}
+.score-bars{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.score-bars span{font-size:10px;background:#f2f4f8;padding:5px 7px;border-radius:999px;color:#5a6577}
+.application-note{font-size:10px;font-weight:900;letter-spacing:.05em;color:#166534;background:#eaf8ef;padding:7px 8px;border-radius:8px;margin-bottom:11px}
+.application-note.eligible{color:#c2410c;background:#fff3e8}
+.application-note.low{color:#8a5d00;background:#fff7df}
+.method{display:inline-block;text-transform:uppercase;font-size:10px;font-weight:900;border-radius:999px;padding:5px 8px}
+.method-auto{background:#e7f7ee;color:#176b35}
+.method-manual{background:#fff3e8;color:#c2410c}
+.personal-match{display:flex;flex-direction:column;gap:4px;background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:15px;margin-bottom:18px}
+.personal-match span{font-size:11px;font-weight:900;color:#c2410c;text-transform:uppercase;letter-spacing:.08em}
+.personal-match strong{font-size:34px}
+.personal-match small{color:var(--muted)}
+@media(max-width:980px){
+  .match-grid{grid-template-columns:repeat(2,1fr)}
+  .metrics-row.four{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .match-grid,.metrics-row.four{grid-template-columns:1fr}
+  .inline-upload{grid-template-columns:1fr}
+  .section-mini-head{flex-direction:column}
+}
+.onboarding-card{padding:28px}.onboarding-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.onboarding-title h1{margin-bottom:8px}.setup-chip{padding:9px 12px;border-radius:999px;background:#fff0f0;color:#a22;font-size:11px;font-weight:900;white-space:nowrap}.setup-chip.ready{background:#e9f8ee;color:#176b35}.step-card{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}.step-card:first-of-type{border-top:0}.step-number{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#f97316;color:#fff;font-weight:900;font-size:18px}.step-content{min-width:0}.step-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:16px}.step-head h2{margin:0 0 4px;font-size:22px}.step-head p{margin:0;color:var(--muted);font-size:13px}.resume-ready{padding:10px 12px;background:#edf9f1;border:1px solid #c7ead3;border-radius:10px;color:#176b35;font-size:13px;margin-bottom:12px}.field-title{display:block;font-size:12px;font-weight:800;color:#4c5668;margin-bottom:8px}.optional-details{margin-top:10px;border-top:1px solid var(--line);padding-top:16px}.optional-details summary{cursor:pointer;font-weight:800;color:#536071}.optional-body{padding-top:16px}.setup-actions{display:flex;gap:10px;align-items:center;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.readiness-card{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:16px;box-shadow:var(--shadow)}.readiness-item{padding:12px;border-radius:11px;background:#fafbfe}.readiness-item span{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:6px}.readiness-item strong{font-size:17px}.readiness-item strong.ok{color:#176b35}.readiness-item strong.no{color:#b42318}.diagnostic{display:flex;justify-content:space-between;gap:16px;align-items:center;border-radius:14px;padding:14px 16px;margin-bottom:16px}.diagnostic.success{background:#edf9f1;border:1px solid #c7ead3;color:#176b35}.diagnostic.info{background:#fff7ed;border:1px solid #fed7aa;color:#c2410c}.diagnostic p{margin:4px 0 0;font-size:12px}.diagnostic-help{font-size:12px;max-width:320px}.diagnostic-help a{font-weight:900;color:inherit}.score-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0}.score-list div{display:flex;justify-content:space-between;gap:8px;padding:6px 8px;background:#f7f8fb;border-radius:8px;font-size:10px}.score-list span{color:var(--muted)}@media(max-width:850px){.readiness-card{grid-template-columns:repeat(2,1fr)}.diagnostic{flex-direction:column;align-items:flex-start}}@media(max-width:650px){.onboarding-title,.step-head,.setup-actions{flex-direction:column}.step-card{grid-template-columns:1fr}.readiness-card{grid-template-columns:1fr}}
+
+.navbar{background:#1f1712;border-bottom:2px solid #f97316}.brand-mark{background:linear-gradient(135deg,#fb923c,#ea580c);box-shadow:0 8px 22px rgba(249,115,22,.28)}.nav-link:hover,.nav-link.active{background:#3a2418;color:#fff}.button.secondary{background:#fff1e6;color:#c2410c}.hero{background:linear-gradient(135deg,#fff7ed,#ffffff 58%)}.professional-home{grid-template-columns:1.12fr .88fr;border-color:#fed7aa}.hero-note{margin-top:18px!important;font-size:12px!important;color:#9a6b4d!important;font-weight:700}.home-process{display:grid;gap:12px;align-content:center}.process-row{display:grid;grid-template-columns:48px 1fr;gap:14px;padding:16px;border:1px solid #fed7aa;border-radius:14px;background:rgba(255,255,255,.9)}.process-row>span{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff1e6;color:#c2410c;font-weight:900}.process-row strong{font-size:15px}.process-row p{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.professional-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.professional-strip>div{background:#fff;border:1px solid #fed7aa;border-radius:14px;padding:18px}.professional-strip strong{display:block;color:#9a3412;margin-bottom:6px}.professional-strip span{font-size:12px;color:var(--muted);line-height:1.5}.match-score{background:#fff1e6;color:#c2410c}.application-note.eligible{background:#fff1e6;color:#c2410c}.auto-toggle{border-color:#fdba74;background:#fff7ed}.step-number{background:#f97316}.app-toast{position:fixed;top:92px;right:24px;z-index:1000;max-width:480px;padding:14px 18px;border-radius:12px;box-shadow:0 18px 45px rgba(40,25,15,.18);font-size:13px;font-weight:800}.app-toast.success{background:#fff7ed;border:1px solid #fb923c;color:#9a3412}.app-toast.error{background:#fff0f0;border:1px solid #fecaca;color:#9b1c1c}input:focus,select:focus,textarea:focus{border-color:#fb923c;box-shadow:0 0 0 3px rgba(249,115,22,.14)}.text-link,.link-button,.auth-foot a{color:#ea580c}@media(max-width:980px){.professional-strip{grid-template-columns:1fr}.professional-home{grid-template-columns:1fr}}@media(max-width:650px){.app-toast{left:14px;right:14px;top:82px}.process-row{grid-template-columns:40px 1fr}}
+
+
+/* =========================================================
+   HireHub V4 - Branding, Glassmorphism, Roles and UX
+   ========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 22px rgba(249, 115, 22, 0.25);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-copy strong {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.brand-copy small {
+  color: #fdba74;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 5px;
+  letter-spacing: 0.04em;
+}
+
+.home-glass-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 24px;
+  align-items: center;
+  padding: 44px;
+  border-radius: 28px;
+  border: 1px solid rgba(249, 115, 22, 0.30);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(251, 146, 60, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 80%, rgba(14, 62, 126, 0.13), transparent 34%),
+    linear-gradient(135deg, #fff7ed 0%, #fffaf6 48%, #fff3e7 100%);
+  box-shadow: 0 24px 60px rgba(83, 49, 24, 0.10);
+}
+
+.home-logo-watermark {
+  position: absolute;
+  width: min(680px, 70vw);
+  height: min(680px, 70vw);
+  object-fit: contain;
+  right: -110px;
+  bottom: -180px;
+  opacity: 0.095;
+  filter: saturate(1.15);
+  pointer-events: none;
+  user-select: none;
+}
+
+.glass-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 22px;
+  padding: 30px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 20px 50px rgba(59, 38, 25, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.home-glass-hero .hero-copy h1 {
+  font-size: clamp(38px, 5.2vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  margin: 10px 0 18px;
+}
+
+.home-glass-hero .hero-copy > p:not(.hero-note) {
+  color: #5f6776;
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 690px;
+}
+
+.home-process {
+  display: grid;
+  gap: 13px;
+}
+
+.home-process .process-row {
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(249, 115, 22, 0.24);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrap input {
+  width: 100%;
+  padding-right: 80px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #ea580c;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 7px 5px;
+}
+
+.password-toggle:hover {
+  color: #9a3412;
+}
+
+.role-info-card {
+  padding: 13px 14px;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  background: #fff8f1;
+  margin: 5px 0 16px;
+}
+
+.role-info-card strong {
+  display: block;
+  color: #9a3412;
+  margin-bottom: 5px;
+}
+
+.role-info-card span {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.dashboard-section {
+  margin: 26px 0;
+}
+
+.dashboard-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 13px;
+}
+
+.dashboard-section-head h2 {
+  margin: 4px 0 0;
+}
+
+.recruiter-applications {
+  margin-top: 30px;
+}
+
+.recruiter-applications .table-wrap {
+  max-height: 620px;
+}
+
+@media (max-width: 980px) {
+  .home-glass-hero {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+
+  .home-logo-watermark {
+    right: -150px;
+    bottom: -150px;
+  }
+
+  .brand-copy strong {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 650px) {
+  .home-glass-hero {
+    padding: 18px;
+    min-height: auto;
+  }
+
+  .glass-panel {
+    padding: 22px 18px;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-copy strong {
+    font-size: 17px;
+  }
+
+  .brand-copy small {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   HireHub V5 - Clean Landing Page
+   ========================================================= */
+
+.home-clean-hero {
+  position: relative;
+  min-height: 510px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 34px;
+  align-items: center;
+  padding: 58px;
+  border: 1px solid #fed7aa;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(249,115,22,.16), transparent 32%),
+    linear-gradient(135deg,#fffaf5,#fff5eb);
+  box-shadow: 0 24px 65px rgba(90,49,20,.09);
+}
+
+.home-clean-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.home-clean-copy h1 {
+  margin: 10px 0 18px;
+  font-size: clamp(48px,5.8vw,78px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.home-clean-copy > p {
+  margin: 0 0 25px;
+  max-width: 620px;
+  color: #667085;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.home-mini-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+
+.home-mini-points span {
+  padding: 8px 11px;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: rgba(255,255,255,.68);
+  color: #9a3412;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.home-logo-stage {
+  display: grid;
+  place-items: center;
+  min-height: 390px;
+}
+
+.home-logo-glass {
+  width: min(390px, 85%);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 34px;
+  background: rgba(255,255,255,.48);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow:
+    0 30px 70px rgba(104,54,20,.14),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.home-logo-glass img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 30px rgba(249,115,22,.14));
+}
+
+.home-logo-glass strong {
+  margin-top: -8px;
+  font-size: 29px;
+  color: #1f1712;
+}
+
+.home-logo-glass span {
+  margin-top: 4px;
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .home-clean-hero {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .home-logo-stage {
+    min-height: 300px;
+  }
+
+  .home-logo-glass {
+    width: min(330px,80%);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-clean-hero {
+    padding: 24px 18px;
+  }
+
+  .home-clean-copy h1 {
+    font-size: 46px;
+  }
+
+  .home-clean-copy > p {
+    font-size: 15px;
+  }
+}
+
+
+/* HireHub V6 - Recruiter-only Job Editing */
+
+.job-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.recruiter-job-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.role-control-note {
+  margin-top: 15px;
+  padding: 11px 12px;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  background: #fff8f1;
+  color: #8a4b20;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 650px) {
+  .job-detail-actions {
+    justify-content: flex-start;
+  }
+}
+
+
+/* =========================================================
+   HireHub V8 - TRUE GLASSMORPHISM HOME
+   ========================================================= */
+
+.glass-home {
+  position: relative;
+  isolation: isolate;
+  min-height: 650px;
+  overflow: hidden;
+  padding: 62px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, .46);
+  background:
+    linear-gradient(135deg, rgba(255, 241, 230, .92), rgba(255, 251, 247, .70)),
+    radial-gradient(circle at 10% 15%, rgba(249,115,22,.32), transparent 34%),
+    radial-gradient(circle at 86% 80%, rgba(37,99,235,.16), transparent 36%);
+  box-shadow:
+    0 32px 80px rgba(90, 49, 20, .16),
+    inset 0 1px 0 rgba(255,255,255,.88);
+}
+
+.glass-home-bg {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.glass-home-bg img {
+  width: min(760px, 74vw);
+  height: min(760px, 74vw);
+  object-fit: contain;
+  opacity: .18;
+  filter: blur(1.2px) saturate(1.1);
+  transform: translate(20%, 7%) scale(1.08);
+}
+
+.glass-orb {
+  position: absolute;
+  z-index: -2;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.glass-orb-one {
+  width: 280px;
+  height: 280px;
+  left: -80px;
+  top: -60px;
+  background: rgba(249,115,22,.30);
+}
+
+.glass-orb-two {
+  width: 330px;
+  height: 330px;
+  right: -95px;
+  bottom: -110px;
+  background: rgba(251,146,60,.20);
+}
+
+.glass-orb-three {
+  width: 210px;
+  height: 210px;
+  right: 28%;
+  top: 13%;
+  background: rgba(37,99,235,.10);
+}
+
+.glass-home-grid {
+  position: relative;
+  z-index: 2;
+  min-height: 525px;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.true-glass-card {
+  background: rgba(255, 255, 255, .22);
+  border: 1px solid rgba(255, 255, 255, .62);
+  backdrop-filter: blur(26px) saturate(145%);
+  -webkit-backdrop-filter: blur(26px) saturate(145%);
+  box-shadow:
+    0 24px 60px rgba(48, 28, 15, .14),
+    inset 0 1px 0 rgba(255,255,255,.76),
+    inset 0 -1px 0 rgba(255,255,255,.22);
+}
+
+.glass-copy {
+  max-width: 720px;
+  padding: 42px;
+  border-radius: 26px;
+}
+
+.glass-copy h1 {
+  margin: 10px 0 18px;
+  font-size: clamp(52px, 6vw, 82px);
+  line-height: .96;
+  letter-spacing: -.058em;
+}
+
+.glass-copy > p {
+  max-width: 590px;
+  margin: 0 0 26px;
+  color: #5e6572;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.glass-button {
+  color: #9a3412;
+  background: rgba(255,255,255,.28);
+  border: 1px solid rgba(255,255,255,.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-button:hover {
+  background: rgba(255,255,255,.48);
+}
+
+.glass-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.glass-tags span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.66);
+  background: rgba(255,255,255,.20);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #9a3412;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.glass-logo-card {
+  width: min(430px, 88%);
+  aspect-ratio: 1 / 1;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  padding: 34px;
+  background: rgba(255,255,255,.18);
+}
+
+.glass-logo-ring {
+  width: 76%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 18px 45px rgba(249,115,22,.16),
+    inset 0 1px 0 rgba(255,255,255,.78);
+}
+
+.glass-logo-ring img {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 28px rgba(70,36,15,.14));
+}
+
+.glass-logo-card > strong {
+  margin-top: 18px;
+  color: #23170f;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.glass-logo-card > span {
+  margin-top: 5px;
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .03em;
+}
+
+/* Slight glass treatment for navbar */
+.navbar {
+  background: rgba(31, 23, 18, .88) !important;
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border-bottom: 1px solid rgba(249,115,22,.65);
+  box-shadow: 0 10px 26px rgba(31,23,18,.12);
+}
+
+@media (max-width: 950px) {
+  .glass-home {
+    padding: 34px;
+  }
+
+  .glass-home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-logo-card {
+    width: min(370px, 82%);
+  }
+
+  .glass-home-bg img {
+    transform: translate(7%, 12%) scale(1.0);
+  }
+}
+
+@media (max-width: 600px) {
+  .glass-home {
+    padding: 20px 14px;
+    min-height: auto;
+    border-radius: 22px;
+  }
+
+  .glass-copy {
+    padding: 25px 20px;
+  }
+
+  .glass-copy h1 {
+    font-size: 48px;
+  }
+
+  .glass-copy > p {
+    font-size: 15px;
+  }
+
+  .glass-logo-card {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================================
+   FINAL HOME - TRUE GLASSMORPHISM, NO CONTENT CARDS
+   ========================================================= */
+
+.final-home {
+  position: relative;
+  isolation: isolate;
+  min-height: 650px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-items: center;
+  gap: 36px;
+  padding: clamp(36px, 6vw, 82px);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(249,115,22,.34), transparent 31%),
+    radial-gradient(circle at 88% 78%, rgba(251,146,60,.22), transparent 32%),
+    linear-gradient(135deg, #fff2e6 0%, #fff9f4 48%, #ffead7 100%);
+  box-shadow: 0 30px 80px rgba(91,49,21,.12);
+}
+
+.final-home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: inherit;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.final-home-watermark {
+  position: absolute;
+  z-index: -3;
+  width: min(900px, 78vw);
+  height: min(900px, 78vw);
+  object-fit: contain;
+  right: -155px;
+  bottom: -255px;
+  opacity: .18;
+  filter: blur(1px) saturate(1.15);
+  pointer-events: none;
+}
+
+.final-home-glass {
+  position: absolute;
+  z-index: -2;
+  inset: 24px;
+  border-radius: 26px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.52);
+  backdrop-filter: blur(26px) saturate(145%);
+  -webkit-backdrop-filter: blur(26px) saturate(145%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.78),
+    0 24px 60px rgba(65,36,18,.08);
+}
+
+.final-home-content {
+  position: relative;
+  z-index: 2;
+  max-width: 690px;
+  padding-left: clamp(0px, 2vw, 22px);
+}
+
+.final-home-content h1 {
+  margin: 10px 0 18px;
+  max-width: 680px;
+  font-size: clamp(58px, 7vw, 96px);
+  line-height: .92;
+  letter-spacing: -.062em;
+  color: #172033;
+}
+
+.final-home-content > p {
+  margin: 0 0 28px;
+  max-width: 560px;
+  color: #596274;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.home-outline-button {
+  background: rgba(255,255,255,.23);
+  color: #a23a0a;
+  border: 1px solid rgba(255,255,255,.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.home-outline-button:hover {
+  background: rgba(255,255,255,.46);
+}
+
+.final-home-logo {
+  position: relative;
+  z-index: 2;
+  justify-self: center;
+  width: min(420px, 82%);
+}
+
+.final-home-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 26px 38px rgba(75,39,15,.18));
+}
+
+/* glass navbar without making it look like a card */
+.navbar {
+  background: rgba(30,22,17,.88) !important;
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border-bottom: 1px solid rgba(249,115,22,.72);
+}
+
+@media (max-width: 900px) {
+  .final-home {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .final-home-content h1 {
+    font-size: clamp(52px, 13vw, 76px);
+  }
+
+  .final-home-logo {
+    width: min(320px, 72%);
+  }
+
+  .final-home-watermark {
+    right: -220px;
+    bottom: -220px;
+  }
+}
+/* =========================================================
+   HIREHUB - FINAL GLOBAL GLASSMORPHISM UI
+   UI ONLY
+   NO BACKEND / API / FUNCTIONALITY CHANGES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ROOT
+   --------------------------------------------------------- */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #f6eee8;
+}
+
+
+/* ---------------------------------------------------------
+   COMPLETE APPLICATION WRAPPER
+   --------------------------------------------------------- */
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   COMMON BACKGROUND FOR EVERY PAGE
+   --------------------------------------------------------- */
+
+.app-background {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(249, 115, 22, 0.34),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(251, 146, 60, 0.28),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 78% 15%,
+      rgba(37, 99, 235, 0.10),
+      transparent 27%
+    ),
+    linear-gradient(
+      135deg,
+      #ffe8d2 0%,
+      #fff8f2 47%,
+      #ffe2c6 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   HIREHUB IMAGE AS BACKGROUND
+   --------------------------------------------------------- */
+
+.app-background-logo {
+  position: absolute;
+
+  top: 50%;
+
+  right: clamp(
+    -120px,
+    -5vw,
+    -30px
+  );
+
+  width: min(
+    920px,
+    76vw
+  );
+
+  max-height: 92vh;
+
+  object-fit: contain;
+
+  transform:
+    translateY(-50%)
+    scale(1.04);
+
+  opacity: 0.25;
+
+  filter:
+    saturate(1.08)
+    drop-shadow(
+      0 32px 60px
+      rgba(91, 49, 21, 0.16)
+    );
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   BACKGROUND SOFT COLOR ORBS
+   --------------------------------------------------------- */
+
+.app-bg-orb {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 999px;
+
+  filter: blur(2px);
+}
+
+
+.app-bg-orb-one {
+  width: 360px;
+  height: 360px;
+
+  left: -120px;
+  top: 8%;
+
+  background:
+    rgba(249, 115, 22, 0.22);
+}
+
+
+.app-bg-orb-two {
+  width: 430px;
+  height: 430px;
+
+  right: -150px;
+  bottom: -110px;
+
+  background:
+    rgba(251, 146, 60, 0.20);
+}
+
+
+.app-bg-orb-three {
+  width: 260px;
+  height: 260px;
+
+  left: 42%;
+  top: 34%;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+}
+
+
+/* ---------------------------------------------------------
+   FULL PAGE GLASS LAYER
+   --------------------------------------------------------- */
+
+.app-glass-layer {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  backdrop-filter:
+    blur(9px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(9px)
+    saturate(135%);
+}
+
+
+/* ---------------------------------------------------------
+   ACTUAL UI ABOVE BACKGROUND
+   --------------------------------------------------------- */
+
+.navbar,
+.page,
+.footer {
+  z-index: 2;
+}
+
+.page,
+.footer {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR GLASS
+   --------------------------------------------------------- */
+
+.navbar {
+  background:
+    rgba(
+      31,
+      23,
+      18,
+      0.72
+    ) !important;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.20
+    ) !important;
+
+  box-shadow:
+    0 12px 34px
+    rgba(
+      46,
+      27,
+      16,
+      0.12
+    );
+
+  backdrop-filter:
+    blur(24px)
+    saturate(145%);
+
+  -webkit-backdrop-filter:
+    blur(24px)
+    saturate(145%);
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+
+.navbar .button.ghost {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+
+/* ---------------------------------------------------------
+   MAIN GLASS CARDS
+   LOGIN
+   REGISTER
+   ADMIN
+   RECRUITER
+   JOBSEEKER
+   JOBS
+   PROFILE
+   --------------------------------------------------------- */
+
+.card,
+.job-card,
+.match-card,
+.readiness-card,
+.onboarding-card,
+.table-card {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    ) !important;
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    ) !important;
+
+  box-shadow:
+    0 22px 55px
+      rgba(
+        67,
+        37,
+        18,
+        0.11
+      ),
+    inset 0 1px 0
+      rgba(
+        255,
+        255,
+        255,
+        0.82
+      ) !important;
+
+  backdrop-filter:
+    blur(22px)
+    saturate(145%);
+
+  -webkit-backdrop-filter:
+    blur(22px)
+    saturate(145%);
+}
+
+
+/* ---------------------------------------------------------
+   DASHBOARD SMALL METRICS
+   --------------------------------------------------------- */
+
+.metric,
+.readiness-item {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    ) !important;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.65
+    );
+
+  backdrop-filter:
+    blur(14px)
+    saturate(130%);
+
+  -webkit-backdrop-filter:
+    blur(14px)
+    saturate(130%);
+}
+
+
+/* ---------------------------------------------------------
+   SCORE LIST ITEMS
+   --------------------------------------------------------- */
+
+.score-list div {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    );
+}
+
+
+/* ---------------------------------------------------------
+   CHIPS
+   --------------------------------------------------------- */
+
+.chip {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.46
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.52
+    );
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+}
+
+
+/* ---------------------------------------------------------
+   CHECKBOX PILLS
+   --------------------------------------------------------- */
+
+.check-pill {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.46
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.65
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+
+/* ---------------------------------------------------------
+   COUNT PILL
+   --------------------------------------------------------- */
+
+.count-pill {
+  background:
+    rgba(
+      255,
+      241,
+      230,
+      0.72
+    );
+
+  border:
+    1px solid
+    rgba(
+      249,
+      115,
+      22,
+      0.20
+    );
+}
+
+
+/* ---------------------------------------------------------
+   FORM INPUTS
+   WORKING BEHAVIOUR UNCHANGED
+   --------------------------------------------------------- */
+
+input,
+select,
+textarea {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.66
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.84
+    );
+
+  border-color:
+    #fb923c;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      249,
+      115,
+      22,
+      0.16
+    );
+}
+
+
+/* ---------------------------------------------------------
+   TABLE GLASS
+   --------------------------------------------------------- */
+
+.table-wrap,
+table {
+  background:
+    transparent;
+}
+
+
+th {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.54
+    );
+}
+
+
+td {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+}
+
+
+tbody tr:hover td {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+}
+
+
+/* ---------------------------------------------------------
+   OPTIONAL DETAILS AREA
+   --------------------------------------------------------- */
+
+.optional-details {
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+}
+
+
+/* ---------------------------------------------------------
+   ALERTS KEEP CURRENT SUCCESS / ERROR COLORS
+   JUST ADD GLASS
+   --------------------------------------------------------- */
+
+.alert,
+.app-toast {
+  backdrop-filter:
+    blur(18px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(135%);
+
+  box-shadow:
+    0 16px 38px
+    rgba(
+      67,
+      37,
+      18,
+      0.10
+    );
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+   USE COMMON BACKGROUND
+   NO SEPARATE BACKGROUND CARD
+   --------------------------------------------------------- */
+
+.final-home {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.20
+    ) !important;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  box-shadow:
+    0 28px 70px
+      rgba(
+        67,
+        37,
+        18,
+        0.11
+      ),
+    inset 0 1px 0
+      rgba(
+        255,
+        255,
+        255,
+        0.78
+      );
+
+  backdrop-filter:
+    blur(20px)
+    saturate(140%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(140%);
+}
+
+
+/*
+   OLD HOME-SPECIFIC BACKGROUND ELEMENTS HIDE.
+   GLOBAL BACKGROUND NOW COMES FROM Layout.jsx.
+*/
+
+.final-home::after,
+.final-home-glass,
+.final-home-watermark {
+  display: none;
+}
+
+
+/* CURRENT HOME LOGO REMAINS VISIBLE */
+
+.final-home-logo {
+  position: relative;
+  z-index: 3;
+}
+
+
+.final-home-logo img {
+  filter:
+    drop-shadow(
+      0 26px 42px
+      rgba(
+        75,
+        39,
+        15,
+        0.18
+      )
+    );
+}
+
+
+/* ---------------------------------------------------------
+   HOME SECONDARY BUTTON GLASS
+   --------------------------------------------------------- */
+
+.home-outline-button {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.70
+    );
+}
+
+
+.home-outline-button:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.52
+    );
+}
+
+
+/* ---------------------------------------------------------
+   KEEP PAGE CONTENT ABOVE GLASS
+   --------------------------------------------------------- */
+
+.section-head,
+.dashboard-section-head,
+.job-detail,
+.form-shell,
+.auth-shell,
+.match-board {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+.footer {
+  color:
+    rgba(
+      72,
+      55,
+      45,
+      0.78
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+
+/* ---------------------------------------------------------
+   TABLE TITLE
+   --------------------------------------------------------- */
+
+.table-title {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+}
+
+
+/* ---------------------------------------------------------
+   AUTH CARDS
+   --------------------------------------------------------- */
+
+.auth-card,
+.form-card {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.50
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   PASSWORD AREA
+   --------------------------------------------------------- */
+
+.password-wrap {
+  position: relative;
+}
+
+
+.password-toggle {
+  z-index: 5;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.button.primary {
+  box-shadow:
+    0 10px 25px
+    rgba(
+      249,
+      115,
+      22,
+      0.22
+    );
+}
+
+
+.button.secondary {
+  background:
+    rgba(
+      255,
+      241,
+      230,
+      0.72
+    );
+}
+
+
+.button.ghost {
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP / TABLET RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .app-background-logo {
+    width:
+      min(
+        760px,
+        105vw
+      );
+
+    right: -240px;
+
+    opacity: 0.20;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .app-background-logo {
+    width: 125vw;
+
+    right: -48vw;
+
+    top: 53%;
+
+    opacity: 0.18;
+  }
+
+
+  .app-glass-layer {
+    backdrop-filter:
+      blur(7px)
+      saturate(130%);
+
+    -webkit-backdrop-filter:
+      blur(7px)
+      saturate(130%);
+  }
+
+
+  .page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+
+  .card,
+  .job-card,
+  .match-card,
+  .readiness-card,
+  .onboarding-card,
+  .table-card {
+    backdrop-filter:
+      blur(18px)
+      saturate(135%);
+
+    -webkit-backdrop-filter:
+      blur(18px)
+      saturate(135%);
+  }
+
+}
+/* =========================================================
+   UI ONLY; EXISTING HIREHUB JOB BEHAVIOUR IS UNCHANGED
+   ========================================================= */
+
+.job-source-tabs{
+  flex-wrap:wrap;
+  margin:0 0 14px;
+}
+
+.job-card-labels{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.source-badge,
+.external-live-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:4px 9px;
+  border-radius:999px;
+  font-size:10px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.58);
+  background:rgba(255,255,255,.42);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.source-linkedin{
+  color:#0a66c2;
+  background:rgba(230,242,255,.72);
+  border-color:rgba(10,102,194,.20);
+}
+
+.source-naukri{
+  color:#275df5;
+  background:rgba(237,242,255,.76);
+  border-color:rgba(39,93,245,.20);
+}
+
+.source-hirehub{
+  color:#c2410c;
+  background:rgba(255,241,230,.76);
+  border-color:rgba(249,115,22,.20);
+}
+
+.external-live-pill{
+  color:#166534;
+  background:rgba(236,253,245,.82);
+  border-color:rgba(22,101,52,.15);
+}
+
+.external-match{
+  width:50px;
+  height:50px;
+  flex:0 0 50px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:13px;
+  font-weight:900;
+  color:#c2410c;
+  background:rgba(255,241,230,.82);
+  border:1px solid rgba(249,115,22,.22);
+  box-shadow:0 10px 24px rgba(194,65,12,.10);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+.external-job-card{
+  position:relative;
+}
+
+.external-job-snippet{
+  margin:12px 0 10px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.external-eligibility{
+  display:inline-flex;
+  margin:6px 0 8px;
+  padding:7px 10px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.external-eligibility.eligible{
+  color:#166534;
+  background:rgba(236,253,245,.76);
+  border:1px solid rgba(22,101,52,.14);
+}
+
+.external-eligibility.below{
+  color:#9a3412;
+  background:rgba(255,247,237,.76);
+  border:1px solid rgba(249,115,22,.18);
+}
+
+.external-posted{
+  margin:2px 0 8px;
+  font-size:11px;
+}
+
+.external-apply-link{
+  display:inline-flex;
+  margin-top:4px;
+  font-weight:900;
+}
+
+.external-jobs-note{
+  margin:-2px 0 14px;
+  padding:10px 13px;
+  border-radius:11px;
+  color:#7c4a2f;
+  background:rgba(255,247,237,.58);
+  border:1px solid rgba(249,115,22,.18);
+  font-size:11px;
+  font-weight:700;
+  line-height:1.5;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+@media(max-width:650px){
+  .job-source-tabs{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .job-source-tabs .tab{
+    width:100%;
+  }
+}
+
+/* =========================================================
+   Added after the existing glassmorphism UI.
+   ========================================================= */
+
+.job-source-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.job-source-tabs {
+  width: max-content;
+  min-width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.job-source-tabs .tab {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.job-source-tabs .tab.active {
+  background: #c2410c;
+  color: #fff;
+  border-color: rgba(194, 65, 12, 0.55);
+  box-shadow: 0 8px 20px rgba(194, 65, 12, 0.18);
+}
+
+.external-available-row {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.external-source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.external-source-mini {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  color: #5b4639;
+  font-size: 11px;
+  font-weight: 800;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.external-apply-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.external-apply-actions .external-apply-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 247, 240, 0.72);
+  border: 1px solid rgba(249, 115, 22, 0.24);
+  text-decoration: none;
+}
+
+.external-apply-actions .external-apply-link:hover {
+  background: rgba(255, 237, 213, 0.92);
+}
+
+.source-badge[class*="source-"] {
+  max-width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+  .job-source-scroll {
+    margin-left: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .job-source-tabs .tab {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .external-apply-actions {
+    flex-direction: column;
+  }
+
+  .external-apply-actions .external-apply-link {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   HIREHUB FINAL APPLICATION CENTER + ANALYTICS
+   ========================================================= */
+
+.status-interview,
+.status-selected {
+  background: #e9f8ee;
+  color: #176b35;
+}
+
+.status-saved,
+.status-ready_to_apply {
+  background: #fff3e8;
+  color: #c2410c;
+}
+
+.status-skipped {
+  background: rgba(90, 90, 90, 0.12);
+  color: #5c514b;
+}
+
+.profile-readiness-panel {
+  margin-bottom: 18px;
+}
+
+.readiness-progress {
+  width: 100%;
+  height: 12px;
+  margin: 14px 0 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+}
+
+.readiness-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  transition: width 0.25s ease;
+}
+
+.readiness-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.readiness-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+}
+
+.readiness-check > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.readiness-check.ready > span {
+  background: #e9f8ee;
+  color: #176b35;
+}
+
+.readiness-check.missing > span {
+  background: #fff3e8;
+  color: #c2410c;
+}
+
+.readiness-check div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.readiness-check small {
+  color: var(--muted, #74675f);
+}
+
+.application-center-metrics {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 26px;
+}
+
+.external-tracker-actions,
+.table-actions-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.table-actions-inline {
+  margin-top: 0;
+}
+
+.external-tracking-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: rgba(255, 243, 232, 0.75);
+  color: #c2410c;
+  border: 1px solid rgba(249, 115, 22, 0.16);
+}
+
+.tracking-applied,
+.tracking-shortlisted,
+.tracking-interview,
+.tracking-selected {
+  background: rgba(233, 248, 238, 0.82);
+  color: #176b35;
+}
+
+.tracking-rejected,
+.tracking-skipped {
+  background: rgba(255, 237, 237, 0.72);
+  color: #9f2929;
+}
+
+.job-card-skipped {
+  opacity: 0.74;
+}
+
+.external-card-error {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #a22;
+}
+
+.muted-action {
+  opacity: 0.76;
+}
+
+.unified-status-text {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted, #74675f);
+}
+
+@media (max-width: 1100px) {
+  .application-center-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .readiness-check-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .application-center-metrics,
+  .readiness-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .external-tracker-actions,
+  .table-actions-inline {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .external-tracker-actions .button,
+  .table-actions-inline .button,
+  .table-actions-inline .link-button,
+  .table-actions-inline .text-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.recruiter-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 18px;
+}
+
+.recruiter-pipeline > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* =========================================================
+   FINAL EXTERNAL APPLY QUEUE FIX
+   - compact primary apply button
+   - extra providers inside dropdown
+   - clearer database/action errors
+   ========================================================= */
+
+.external-apply-compact {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.external-primary-apply {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.external-more-options {
+  position: relative;
+}
+
+.external-more-options > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  background: rgba(255, 255, 255, 0.48);
+  color: #8d3b0c;
+  font-size: 0.86rem;
+  font-weight: 800;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.external-more-options > summary::-webkit-details-marker {
+  display: none;
+}
+
+.external-more-options[open] > summary {
+  background: rgba(255, 247, 239, 0.84);
+}
+
+.external-more-options-menu {
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 14px 34px rgba(78, 42, 20, 0.10);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.external-more-option {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.54);
+  color: #5f3924;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 750;
+  text-align: left;
+}
+
+.external-more-option:hover {
+  background: rgba(255, 241, 230, 0.92);
+}
+
+.external-more-option:disabled,
+.external-primary-apply:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+
+.external-card-error {
+  margin-top: 11px;
+  padding: 9px 11px;
+  border-radius: 11px;
+  border: 1px solid rgba(185, 28, 28, 0.16);
+  background: rgba(254, 242, 242, 0.76);
+  color: #991b1b;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* Old multi-button layout is no longer used by JobCard. */
+.external-apply-actions {
+  display: none !important;
+}
+
+@media (max-width: 650px) {
+  .external-more-options > summary,
+  .external-more-option,
+  .external-primary-apply {
+    width: 100%;
+  }
+}
