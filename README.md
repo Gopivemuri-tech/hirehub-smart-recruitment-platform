@@ -67,12 +67,12 @@ The score is used to rank opportunities and determine whether a HireHub-native j
 
 ### Account Creation
 <p align="center">
-  <img src="docs/screenshots/08-create-account.png" width="420" alt="HireHub candidate and recruiter account creation">
+  <img src="docs/screenshots/01-create-account.png" width="420" alt="HireHub candidate and recruiter account creation">
 </p>
 
 ### Login
 <p align="center">
-  <img src="docs/screenshots/01-login.png" width="780" alt="HireHub login screen">
+  <img src="docs/screenshots/02-login.png" width="780" alt="HireHub login screen">
 </p>
 
 ### Auto Apply Setup
@@ -82,7 +82,7 @@ The score is used to rank opportunities and determine whether a HireHub-native j
 
 ### Candidate Job Discovery & Match Scores
 <p align="center">
-  <img src="docs/screenshots/02-job-discovery-linkedin.png" width="780" alt="HireHub candidate job discovery with LinkedIn listings and match scores">
+  <img src="docs/screenshots/08-job-discovery-linkedin.png" width="780" alt="HireHub candidate job discovery with LinkedIn listings and match scores">
 </p>
 
 ### Unified Application Tracker
